@@ -34,16 +34,25 @@
 	<div id="container">
 		<h1>The Magnificent Counting Machine</h1>
 		<textarea id="textAdded" placeholder="Enter your text here!"></textarea><br>
-		<button onclick="countFunction()">Count all the things!</button><br>
+		<button onclick="countCharacters()">Count all the things!</button><br>
 		<h2 id="results"></h2>
 	</div>
 
 	<script type="text/javascript">
     
-    function countFunction() {
+    function countCharacters() {
+    	//Retrieves the input from the textarea
     	var input = document.getElementById("textAdded").value;
+    	
+    	//Removes spaces from string to create character count
     	var noSpace = input.replace(/ /g, "");
-    	document.getElementById("results").innerHTML = "You used " + noSpace.length + " letters.";
+
+    	//Seperates string into seperate words
+    	var seperateWords = input.split(" ");
+
+    	/*Calculates the number of characters and words
+    	Writes the resutls to the screen*/
+    	document.getElementById("results").innerHTML = "You used " + noSpace.length + " letters and " + seperateWords.length + " words.";
     }
 
 	</script>
